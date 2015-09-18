@@ -1,0 +1,123 @@
+/* 
+	Soldevi Reset file v1.0
+*/
+
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}p {line-height:1.5;margin-bottom:18px;color:#333;}.muted {color:#666;}h1, h2, h3, h4, h5, h6 {line-height:1.1;color:#000;letter-spacing:-0.025em;}
+ul{list-style:disc;margin-bottom:1.5em;}ol{list-style:decimal;margin-bottom:1.5em;}strong{font-weight:bold;}em{font-style:italic;}body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6 {font-size-adjust: 0.5;}
+html {box-sizing: border-box;}*, *:before, *:after {box-sizing: inherit;}
+body{font-size:120%; line-height: 1.25;}
+h1 {font-size: 2em;line-height: 1.25;margin-top: 0.9375em;margin-bottom: 0.3125em;}
+h2 {font-size: 1.625em;line-height: 1.15384615;margin-top: 1.15384616em;margin-bottom: 0.38461539em;}
+h3 {font-size: 1.375em; line-height: 1.13636364;margin-top: 1.37500001em;margin-bottom: 0.45833334em;}
+h4 {font-size: 1.125em;line-height: 1.11111111;margin-top: 1.66666667em; margin-bottom: 0.55555556em;}
+blockquote {font-size: 1.25em; line-height: 1.25;}
+abbr {text-transform:uppercase;font-size:0.8em;letter-spacing:0.1em;}
+
+@media (min-width: 43.75em) {
+	body {font-size: 1em;line-height: 1.375;}
+    h1 {font-size: 2.5em;line-height: 1.125;margin-top: 0.73333334em;margin-bottom: 0.24444445em;}
+    h2 {font-size: 2em;line-height: 1.25; margin-top: 1.03125em;margin-bottom: 0.34375em;}
+    h3 {font-size: 1.5em;line-height: 1.25;margin-top: 1.37500001em;margin-bottom: 0.45833334em;}
+    h4 {line-height: 1.22222222;margin-top: 1.83333333em; margin-bottom: 0.61111111em;}
+	blockquote {font-size: 1.5em;line-height: 1.45833333;}
+}
+
+@media (min-width: 56.25em) {
+	h1 {font-size: 3em;line-height: 1.05;margin-top: 0.6875em;margin-bottom: 0.22916667em;}
+	h2 {font-size: 2.25em;line-height: 1.25;margin-top: 1.03125em;margin-bottom: 0.34375em;}
+	h3 {font-size: 1.75em;line-height: 1.25;margin-top: 1.37500001em;margin-bottom: 0.45833334em;}
+}
+
+/*
+	 SUPER GENERIC EVERY PAGE STYLE STUFF
+*/
+
+body{background:#f3f3f3;font-family:"Open Sans", arial, san-serif;}
+h1,h2,h3,h4,h5,h6{font-family:"Bree Serif",serif;}
+
+/*
+     Header
+*/
+
+header{background:#111;}
+.generalHeader{zoom:1;}
+.generalHeader:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.logo{font-family:"Bree Serif";color:#ccc;font-size:1.9em;padding:0 20px;}
+nav{display:inline-block;float:right;padding-right:20px;}
+nav ul{margin-bottom:0px;padding:0;}
+nav li {color:#fff;display:inline-block;margin:0 26px;height:42px;vertical-align: middle;}
+.navigationLink{color:#FFF;display:inline-block;text-decoration:none;height:42px;vertical-align: middle;padding-top:10px;}
+.navigationLink:hover{color:#9C27B0; border-bottom:4px solid #9C27B0;}
+#homePage .homeLink {color:#9C27B0; border-bottom:4px solid #9C27B0;font-weight:bold;}
+#archivePage .archiveLink {color:#9C27B0; border-bottom:4px solid #9C27B0;font-weight:bold;}
+#aboutPage .aboutLink {color:#9C27B0; border-bottom:4px solid #9C27B0;font-weight:bold;}
+#contactPage .contactLink {color:#9C27B0; border-bottom:4px solid #9C27B0;font-weight:bold;}
+.search{height:100%;width:200px;height:42px;float:right;background:#333;}
+.searchBox{background:transparent;border:0px;height:100%;width:160px;position:relative;top:0px;color:#fff;padding:10px;}
+.search:after{content:"";position:absolute;height:20px;width:20px;top:10px;right:10px;background:url(../img/search.png);cursor:pointer;}
+.hero{background:url(../img/cloudHero.png);background-size:cover;width:100%;height:10em;}
+.topicBar{text-align:center;padding:0 20px;}
+.topicType{display:inline-block;color:#FFF;margin:0 30px;text-transform: uppercase;padding:10px 0;letter-spacing:2px;}
+.generalTopic{border-bottom:4px solid #F44336;}
+.htmlTopic{border-bottom:4px solid #9C27B0;}
+.phpTopic{border-bottom:4px solid #2196F3;}
+.jsTopic{border-bottom:4px solid #FFC107;}
+.designTopic{border-bottom:4px solid #4CAF50;}
+.projectTopic {border-bottom:4px solid #CDDC39;}
+.hotTopic{border-bottom:4px solid #000;}
+/*
+	Main Body
+*/
+.mainWrapper{width:100%;max-width:1680px;padding:20px;margin:0 auto;}
+.innerWrapper{width:100%;}
+
+/*
+	Front page
+*/
+section{width:33%;float:left;padding:10px;}
+.sectionInner{background: #fff;border: 1px solid #e9e9e9;}
+.blogType{padding:20px;width:100%;height:60px;border-bottom:2px solid #F44336;}
+.blogType:before{position: absolute;left: 30px;top: 15px;font-weight: bold;font-size: 1.2em;}
+.blogImage{width:100%;height:200px;background:url(../img/exampleHeader.png);background-size:cover;}
+.blogDate{color:#000;}
+.blogData{padding:14px;}
+.blogData h2{padding-top:10px;}
+.readMore{border-radius:2px;background:transparent;border:2px solid #eee;padding:14px;cursor:pointer;}
+.readMore:hover{color:#FFF !important;}
+
+/*
+	Blocks for auto colouring
+*/
+
+.generalType .blogType{border-bottom:2px solid #F44336;color:#F44336;position:relative;}
+.generalType .blogType:before{content:"General teaching";}
+.generalType .readMore{color:#F44336;border-color:#F44336;}
+.generalType .readMore:hover{background:#F44336;}
+.htmlType .blogType{border-bottom:2px solid #9C27B0;color:#9C27B0;position:relative;}
+.htmlType .blogType:before{content:"HTML & CSS";}
+.htmlType .readMore{color:#9C27B0;border-color:#9C27B0;}
+.htmlType .readMore:hover{background:#9C27B0;}
+.phpType .blogType{border-bottom:2px solid #2196F3;color:#2196F3;position:relative;}
+.phpType .blogType:before{content:"PHP";}
+.phpType .readMore{color:#2196F3;border-color:#2196F3;}
+.phpType .readMore:hover{background:#2196F3;}
+.jsType .blogType{border-bottom:2px solid #FFC107;color:#FFC107;position:relative;}
+.jsType .blogType:before{content:"Javascript";}
+.jsType .readMore{color:#FFC107;border-color:#FFC107;}
+.jsType .readMore:hover{background:#FFC107;}
+.designType .blogType{border-bottom:2px solid #4CAF50;color:#4CAF50;position:relative;}
+.designType .blogType:before{content:"Design & UX";}
+.designType .readMore{color:#4CAF50;border-color:#4CAF50;}
+.designType .readMore:hover{background:#4CAF50;}
+.projectType .blogType{border-bottom:2px solid #CDDC39;color:#CDDC39;position:relative;}
+.projectType .blogType:before{content:"Project work";}
+.projectType .readMore{color:#CDDC39;border-color:#CDDC39;}
+.projectType .readMore:hover{background:#CDDC39;}
+
+
+
+
+
+
+
+
