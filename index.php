@@ -8,46 +8,46 @@
         <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="script/jquery.min.js"></script>
+        <script type="text/javascript" src="script/shared.js"></script>
     </head>
     <body id="homePage">
 	    <header>
 	    	<div class="generalHeader clearFloat">
 	    		<div class="marginedIn">
 		    		<!--<img src="" class="logo" />-->
-			    	<span class="logo">
-			    		Soldevi
-			    	</span>
+			    	<a class="logoLink" href="index.php">
+			    		<span class="logo">
+			    			Soldevi
+			    		</span>
+			    	</a>
 			    	<div class="search">
 			    		<input type="text" class="searchBox" name="searchBox" id="searchBox" />
 			    	</div>
 			    	<span class="clearFloatMobile"></span>
 		    		<nav>
 		    			<ul>
-		    				<li><a href="" class="navigationLink homeLink">Home</a></li>
-		    				<li><a href="" class="navigationLink archiveLink">Archive</a></li>
-		    				<li><a href="" class="navigationLink studentLink">Student</a></li>
-		    				<li><a href="" class="navigationLink aboutLink">About</a></li>
-		    				<li class="contactLi"><a href="" class="navigationLink contactLink">Contact</a></li>
+		    				<li><a href="index.php" class="navigationLink homeLink">Home</a></li>
+		    				<li><a href="archive.php" class="navigationLink archiveLink">Archive</a></li>
+		    				<li><a href="students.php" class="navigationLink studentLink">Students</a></li>
+		    				<li><a href="about.php" class="navigationLink aboutLink">About</a></li>
 		    			</ul>
 		    		</nav>
 		    	</div>
 	    	</div>
 	    	<div class="hero"></div>
 	    	<div class="topicBar marginedIn">
-	    		<div class="generalTopic topicType">Teaching</div>
-	    		<div class="htmlTopic topicType">HTML</div>
-	    		<div class="phpTopic topicType">PHP</div>
-	    		<div class="jsTopic topicType">Js</div>
-	    		<div class="designTopic topicType">Design</div>
-	    		<div class="projectTopic topicType">Projects</div>
+	    		<div id="allTopic" class="allTopics topicType">*</div>
+	    		<div id="generalTopic" class="generalTopic topicType">Teaching</div>
+	    		<div id="htmlTopic" class="htmlTopic topicType">HTML</div>
+	    		<div id="phpTonic" class="phpTopic topicType">PHP</div>
+	    		<div id="jsTopic" class="jsTopic topicType">Js</div>
+	    		<div id="designTopic" class="designTopic topicType">Design</div>
+	    		<div id="projectTopic" class="projectTopic topicType">Projects</div>
 	    	</div>
 	    </header>
 	    <div class="mainWrapper marginedIn">
 	    	<div class="innerWrapper clearFloat">
-
-		    	<h1>Welcome</h1>
-		    	<p>This is the teaching blog of Fae Daunt, a web design/development teacher at the SAE Brisbane campus. Here I will try and keep track of discoveries and techniques that I discover and use for teaching HTML, JS, PHP and Project work.</p>
-		    	<section class="generalType">
+		    	<section class="generalType frontPageSection">
 		    		<div class="sectionInner">
 			    		<div class="blogType"></div>
 			    		<div class="blogData">
@@ -59,7 +59,7 @@
 				    	</div>
 				    </div>
 		    	</section>
-		    	<section class="htmlType">
+		    	<section class="htmlType frontPageSection">
 		    		<div class="sectionInner">
 			    		<div class="blogType"></div>
 			    		<div class="blogData">
@@ -71,43 +71,7 @@
 				    	</div>
 				    </div>
 		    	</section>
-		    	<section class="phpType">
-		    		<div class="sectionInner">
-			    		<div class="blogType"></div>
-			    		<div class="blogData">
-			    			<div class="blogImage"></div>
-				    		<div class="blogDate">September 17th, 2015</div>
-				    		<h2>An example of what this might just look like</h2>
-				    		<p>Are you using keywords to optimize your entire marketing strategy? If not, here are some ways to do it beyond webpage optimization.</p>
-				    		<button class="readMore">Read this post</button>
-				    	</div>
-				    </div>
-		    	</section>
-		    	<section class="jsType">
-		    		<div class="sectionInner">
-			    		<div class="blogType"></div>
-			    		<div class="blogData">
-			    			<div class="blogImage"></div>
-				    		<div class="blogDate">September 17th, 2015</div>
-				    		<h2>An example of what this might just look like</h2>
-				    		<p>Are you using keywords to optimize your entire marketing strategy? If not, here are some ways to do it beyond webpage optimization.</p>
-				    		<button class="readMore">Read this post</button>
-				    	</div>
-				    </div>
-		    	</section>
-		    	<section class="designType">
-		    		<div class="sectionInner">
-			    		<div class="blogType"></div>
-			    		<div class="blogData">
-			    			<div class="blogImage"></div>
-				    		<div class="blogDate">September 17th, 2015</div>
-				    		<h2>An example of what this might just look like</h2>
-				    		<p>Are you using keywords to optimize your entire marketing strategy? If not, here are some ways to do it beyond webpage optimization.</p>
-				    		<button class="readMore">Read this post</button>
-				    	</div>
-				    </div>
-		    	</section>
-		    	<section class="projectType">
+		    	<section class="phpType frontPageSection">
 		    		<div class="sectionInner">
 			    		<div class="blogType"></div>
 			    		<div class="blogData">
@@ -132,11 +96,21 @@
 			</div>
 		-->
 	    <script>
-	    $('.search').on('click touch', function() {
-	    	if ($('.search').css('width') == '40px') {
-	    		$('.search').addClass('showSearch');
-	    	}
-	    })
+		    $('.search').on('click touch', function() {
+		    	if ($('.search').css('width') == '40px') {
+		    		$('.search').addClass('showSearch');
+		    	}
+		    });
+
+		    $('.topicType').on('click touch', function() {
+		    	var currentId = $(this).attr('id').replace("Topic","Type")
+		    	$('.topicType').addClass('noType');
+		    	$(this).removeClass('noType');
+		    	$('.frontPageSection:not(.'+currentId+')').fadeOut(function() {
+		    		$('.'+currentId).fadeIn();
+		    	});
+		    	console.log('.frontPageSection:not(.'+currentId+')');
+		    });
 	    </script>
     </body>	
 </html>
