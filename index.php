@@ -129,20 +129,9 @@
 				}
 			?>
 
-			var filters = [];
-			filters[1] = 1;
-			filters[2] = 1;
-			filters[3] = 1;
-			filters[4] = 1;
-			filters[5] = 1;
-			filters[6] = 1; 
-			var filterTypes = [];
-			filterTypes[1] = 'generalType';
-			filterTypes[2] = 'htmlType';
-			filterTypes[3] = 'phpType';
-			filterTypes[4] = 'jsType';
-			filterTypes[5] = 'designType';
-			filterTypes[6] = 'projectType';
+			var filters = [];filters[1] = 1;filters[2] = 1;filters[3] = 1;filters[4] = 1;filters[5] = 1;filters[6] = 1; 
+			var filterTypes = [];filterTypes[1] = 'generalType';filterTypes[2] = 'htmlType';filterTypes[3] = 'phpType';filterTypes[4] = 'jsType';filterTypes[5] = 'designType';filterTypes[6] = 'projectType';
+			var filterTotals = [];filterTotals[1] = 0;filterTotals[2] = 0;filterTotals[3] = 0;filterTotals[4] = 0;filterTotals[5] = 0;filterTotals[6] = 0;
 
 			function draw() {
 				checkFilters();
@@ -154,8 +143,19 @@
 						var fillerData = "<section class='"+filterTypes[array['blogtype']]+" frontPageSection' style='display:none;'><div class='sectionInner'><div class='blogType'></div><div class='blogData'><div class='blogImage' style='background-image:src('img/"+array['image']+"'></div><div class='blogDate'>"+array['blogdate']+"</div><h2>"+array['title']+"</h2><p>"+array['short']+"</p><a href='article/"+array['blogurl']+"'><button class='readMore'>Read this post</button></a></div></div></section>";
 						$('#sectionHolder').append(fillerData);
 					}
+					filterTotals[array['blogtype']]++;
 				});
 				$('.frontPageSection').fadeIn();
+				checkRemovals();
+			}
+
+			function checkRemovals() {
+				if (filterTotals[1] < 1) {$('.generalTopic').hide();}
+				if (filterTotals[2] < 1) {$('.htmlTopic').hide();}
+				if (filterTotals[3] < 1) {$('.phpTopic').hide();}
+				if (filterTotals[4] < 1) {$('.jsTopic').hide();}
+				if (filterTotals[5] < 1) {$('.designTopic').hide();}
+				if (filterTotals[6] < 1) {$('.projectTopic').hide();}
 			}
 
 			function checkFilters() {
@@ -185,7 +185,7 @@
 		    	} else {
 			    	$('.topicType').addClass('noType');
 			    	$(this).removeClass('noType');
-			    	$('.frontPageSection:not(.'+currentId+')').fadeOut(function() {
+			    	$('.frontPageSection').fadeOut(function() {
 			    		draw();
 			     	});
 			    }
