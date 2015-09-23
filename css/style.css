@@ -18,9 +18,9 @@ abbr {text-transform:uppercase;font-size:0.8em;letter-spacing:0.1em;}
 */
 
 body{background:#f3f3f3;font-family:"Open Sans", arial, san-serif;}
-h1,h2,h3,h4,h5,h6{font-family:"Bree Serif",serif;}
+h1,h2,h3,h4,h5,h6{font-family:"Bree Serif",serif;text-decoration: none;}
 .marginedIn{width:100%;max-width:1680px;margin:0 auto;position:relative;}
-
+a{color:#9C27B0;}
 /*
      Header
 */
@@ -72,14 +72,16 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .sectionInner{background: #fff;border: 1px solid #e9e9e9;}
 .blogType{padding:20px;width:100%;height:60px;border-bottom:2px solid #F44336;}
 .blogType:before{position: absolute;left: 30px;top: 15px;font-weight: bold;font-size: 1.2em;}
+.articleType:before{left:0px;}
 .blogImage{width:100%;height:200px;background:url(../img/exampleHeader.png);background-size:cover;}
 .blogImageLarge{width:100%;height:500px;background:url(../img/exampleHeader.png);background-size:cover;}
-.blogDate{color:#000;position: absolute;right: 20px;top: 0px;font-style: italic;}
+.blogDate{color:#000;font-style: italic;}
+.articleDate{position:absolute;right:20px;top:0px;}
 .blogData{padding:14px;}
+.articleTitle{margin-top:10px;}
 .blogData h2{padding-top:10px;}
 .readMore{border-radius:2px;background:transparent;border:2px solid #eee;padding:14px;cursor:pointer;}
 .readMore:hover{color:#FFF !important;}
-.articleTitle{margin-top:10px;}
 
 /*
 	Blocks for auto colouring
@@ -118,6 +120,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .archiveSection{width:100%;}
 .archiveImage{width:80px;height:80px;background:url(../img/exampleHeader.png);background-size:cover;float:left;margin-right:30px;}
 .brief{margin-top:20px;}
+.archiveLink{text-decoration:none;}
 
 /*
 	About page

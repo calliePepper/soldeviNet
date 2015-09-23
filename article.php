@@ -1,3 +1,21 @@
+<?php
+	include "../databaseControllers/blogDb.php";
+	$currentName = $_GET['name'];
+	$query = $con->prepare("SELECT * FROM blogs WHERE blogurl = '$currentName'");
+	//$query->bind_param('s', $_GET['username']);
+	$query->execute();
+	$query->store_result(); // <-- this
+	$query->bind_result($id,$title,$url,$date,$type,$short,$content,$status);
+	while($query->fetch()){
+		if (isset($id)) {
+			$innerQuery = $con->prepare("SELECT imageurl, alt FROM images WHERE blogId = $id AND imagetype = 3");
+			$innerQuery->execute();
+			$innerQuery->store_result(); // <-- this
+			$innerQuery->bind_result($imageURL,$imageAlt);
+			$innerQuery->fetch(); 
+		}
+	}
+?>
 <!DOCTYPE html>
 <html> 
     <head> 
@@ -35,24 +53,24 @@
 		    	</div>
 	    	</div>
 	    </header>
-	    <div class="blogImageLarge"></div>
+	    <div class="blogImageLarge" style="background-image:src('img/<?=$imageURL?>')"></div>
 	    <div class="topicBar marginedIn"></div>
 	    <div class="mainWrapper marginedIn">
 
 	    	<div class="innerWrapper clearFloat">
 			    
-				<div class="blogDate">September 17th, 2015</div>
+				<div class="blogDate articleDate"><?=date('F jS, Y', strtotime($date))?></div>
 				<div class="generalType">
-			    	<div class="blogType"></div>
+			    	<div class="blogType articleType"></div>
 			    </div>
-				<h1 class="articleTitle">An example of what this might just look like</h1>
-				<p>Are you using keywords to optimize your entire marketing strategy? If not, here are some ways to do it beyond webpage optimization.</p>
+				<h1 class="articleTitle"><?=$title?></h1>
+				<p><?=$content?></p>
 		    	<div id="disqus_thread"></div>
 				<script type="text/javascript">
 				    /* * * CONFIGURATION VARIABLES * * */
 				    var disqus_shortname = 'soldevinet';
-				    var disqus_identifier = 'This article name';
-				    var disqus_title = 'This title of this page';
+				    var disqus_identifier = '<?=$url?>';
+				    var disqus_title = '<?=$title?>';
 				    /* * * DON'T EDIT BELOW THIS LINE * * */
 				    (function() {
 				        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

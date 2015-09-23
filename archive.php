@@ -42,14 +42,37 @@
 
 		    	<h1>Archive</h1>
 
-		    	<section class="archiveSection">
-		    		<div class="clearFloat">
-			    		<div class="archiveImage"></div>
-			    		<h2>Example archive name</h2>
-			    		<div class="blogDate">September 17th, 2015</div>
-			    	</div>
-		    		<p class="brief">Are you using keywords to optimize your entire marketing strategy? If not, here are some ways to do it beyond webpage optimization. <a href="">Read more...</a></p>
-		    	</section>
+				<?php
+					include "../databaseControllers/blogDb.php";
+					$query = $con->prepare('SELECT * FROM blogs');
+					//$query->bind_param('s', $_GET['username']);
+					$query->execute();
+					$query->store_result(); // <-- this
+					$query->bind_result($id,$title,$url,$date,$type,$short,$content,$status);
+					while($query->fetch()){
+						if (isset($id)) {
+							$innerQuery = $con->prepare("SELECT imageurl, alt FROM images WHERE blogId = $id AND imagetype = 1");
+							$innerQuery->execute();
+							$innerQuery->store_result(); // <-- this
+							$innerQuery->bind_result($imageURL,$imageAlt);
+			 				while($innerQuery->fetch()){
+							   $date = date('F jS, Y', strtotime($date)); ?>
+							   <section class="archiveSection">
+						    		<a class="archiveLink" href="article/<?=$url?>">
+							    		<div class="clearFloat">
+								    		<div class="archiveImage" style="background-image:url('img/<?=$imageURL?>')"></div>
+								    		<h2><?=$title?></h2>
+								    		<div class="blogDate"><?=$date?></div>
+								    	</div>
+							    		<p class="brief"><?=$short?></p>
+						    		</a>
+						    	</section>
+							<?php }
+						}
+					}
+				?>
+
+		    	
 		    </div>
 	    </div>
 	    <!-- Set up for loading anim
@@ -63,6 +86,7 @@
 			</div>
 		-->
 	    <script>
+	    $('.brief').hide();
 	    $('.search').on('click touch', function() {
 	    	if ($('.search').css('width') == '40px') {
 	    		$('.search').addClass('showSearch');
