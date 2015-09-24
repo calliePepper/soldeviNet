@@ -59,13 +59,21 @@
 							$innerQuery->store_result(); // <-- this
 							$innerQuery->bind_result($imageURL,$imageAlt);
 			 				while($innerQuery->fetch()){
-							   $date = date('F jS, Y', strtotime($date)); ?>
+							   $date = date('F jS, Y', strtotime($date)); 
+							   if ($type == 1){$wordType = "General teaching";$classType = "generalType";}
+							   if ($type == 2){$wordType = "HTML &amp; CSS";$classType = "htmlType";}
+							   if ($type == 3){$wordType = "PHP";$classType = "phpType";}
+							   if ($type == 4){$wordType = "Javascript";$classType = "jsType";}
+							   if ($type == 5){$wordType = "Design &amp; UX";$classType = "designType";}
+							   if ($type == 6){$wordType = "Project Based Learning";$classType = "projectType";}
+
+							   ?>
 							   <section class="archiveSection">
 						    		<a class="archiveLink" href="article/<?=$url?>">
 							    		<div class="clearFloat">
 								    		<div class="archiveImage" style="background-image:url('img/<?=$imageURL?>')"></div>
 								    		<h2><?=$title?></h2>
-								    		<div class="blogDate"><?=$date?></div>
+								    		<span class="<?=$classType?>"><span class="blogType miniType"><?=$wordType?></span></span><span class="blogDate"><?=$date?></span>
 								    	</div>
 							    		<p class="brief"><?=$short?></p>
 						    		</a>

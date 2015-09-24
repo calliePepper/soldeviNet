@@ -79,7 +79,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .articleType{margin-bottom:32px;}
 .articleType:before{left:0px;}
 .blogImage{width:100%;height:200px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
-.blogImageLarge{width:100%;height:500px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
+.blogImageLarge{width:100%;height:200px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 .blogDate{color:#000;font-style: italic;}
 .articleDate{position:absolute;right:20px;top:0px;}
 .blogData{padding:14px;}
@@ -116,7 +116,8 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .projectType .blogType:before{content:"Project work";}
 .projectType .readMore{color:#CDDC39;border-color:#CDDC39;}
 .projectType .readMore:hover{background:#CDDC39;}
-
+.miniType:before{content:"" !important ;}
+.miniType{padding:0 10px;}
 
 /*
 	Archive page
@@ -133,8 +134,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 	About page
 */
 
-.shotOfMe{position:absolute;left:0px;top:0px;}
-.aboutContent{padding-left:400px;max-width:1680px;width:100%;}
+
 .tinyWrapper{width:600px;margin:0 auto;}
 .contactCard{padding:20px;background:#fff;border: 1px solid #e9e9e9;}
 .socialThirds{width:32%;padding:10px;display:inline-block;}
@@ -198,6 +198,7 @@ textarea{height:200px;}
 	.searchBox{display:inline-block;}
 	.logo{padding: 0 20px;}
 	.mainWrapper{padding:20px;}
+  .blogImageLarge{width:100%;height:300px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 }
 
 @media (min-width: 43.75em) {
@@ -215,6 +216,8 @@ textarea{height:200px;}
 	h2 {font-size: 2.25em;line-height: 1.25;margin-top: 1.03125em;margin-bottom: 0.34375em;}
 	h3 {font-size: 1.75em;line-height: 1.25;margin-top: 1.37500001em;margin-bottom: 0.45833334em;}
 	.topicType{margin:0 30px;font-size:1em;letter-spacing:2px;}
+  .shotOfMe{position:absolute;left:0px;top:0px;}
+  .aboutContent{padding-left:400px;max-width:1680px;width:100%;}
 }
 
 @media (min-width: 62.5em) {
@@ -223,6 +226,7 @@ textarea{height:200px;}
 	.frontPageSection{width:50%;float:left;padding:10px;}
 	header{padding-top:42px;}
 	.hero{height:160px;}
+  .blogImageLarge{width:100%;height:400px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 }
 
 @media (min-width: 80em) {
@@ -231,6 +235,7 @@ textarea{height:200px;}
 	.htmlTopic:after{content:" & CSS";}
 	.designTopic:after{content:" & UX";}
 	.projectTopic:after{content:" Work";}
+  .blogImageLarge{width:100%;height:500px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 }
 
 /*

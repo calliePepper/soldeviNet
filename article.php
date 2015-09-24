@@ -1,6 +1,7 @@
 <?php
 	include "../databaseControllers/blogDb.php";
 	$currentName = $_GET['name'];
+
 	$query = $con->prepare("SELECT * FROM blogs WHERE blogurl = '$currentName'");
 	//$query->bind_param('s', $_GET['username']);
 	$query->execute();
@@ -8,6 +9,12 @@
 	$query->bind_result($id,$title,$url,$date,$type,$short,$content,$status);
 	while($query->fetch()){
 		if (isset($id)) {
+			if ($type == 1){$wordType = "General teaching";$classType = "generalType";}
+			if ($type == 2){$wordType = "HTML &amp; CSS";$classType = "htmlType";}
+			if ($type == 3){$wordType = "PHP";$classType = "phpType";}
+			if ($type == 4){$wordType = "Javascript";$classType = "jsType";}
+			if ($type == 5){$wordType = "Design &amp; UX";$classType = "designType";}
+			if ($type == 6){$wordType = "Project Based Learning";$classType = "projectType";}
 			$innerQuery = $con->prepare("SELECT imageurl, alt FROM images WHERE blogId = $id AND imagetype = 3");
 			$innerQuery->execute();
 			$innerQuery->store_result(); // <-- this
@@ -60,7 +67,7 @@
 	    	<div class="innerWrapper clearFloat">
 			    
 				<div class="blogDate articleDate"><?=date('F jS, Y', strtotime($date))?></div>
-				<div class="generalType">
+				<div class="<?=$classType?>">
 			    	<div class="blogType articleType"></div>
 			    </div>
 				<div class="articleContent">
