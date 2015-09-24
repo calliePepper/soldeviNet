@@ -44,16 +44,16 @@
 			    	<span class="clearFloatMobile"></span>
 		    		<nav>
 		    			<ul>
-		    				<li><a href="index.php" class="navigationLink homeLink">Home</a></li>
-		    				<li><a href="archive.php" class="navigationLink archiveLink">Archive</a></li>
-		    				<li><a href="students.php" class="navigationLink studentLink">Students</a></li>
-		    				<li><a href="about.php" class="navigationLink aboutLink">About</a></li>
+		    				<li><a href="/index.php" class="navigationLink homeLink">Home</a></li>
+		    				<li><a href="/archive.php" class="navigationLink archiveLink">Archive</a></li>
+		    				<li><a href="/students.php" class="navigationLink studentLink">Students</a></li>
+		    				<li><a href="/about.php" class="navigationLink aboutLink">About</a></li>
 		    			</ul>
 		    		</nav>
 		    	</div>
 	    	</div>
 	    </header>
-	    <div class="blogImageLarge" style="background-image:src('/img/<?=$imageURL?>')"></div>
+	    <div class="blogImageLarge" style="background-image:url('/img/<?=$imageURL?>')"></div>
 	    <div class="topicBar marginedIn"></div>
 	    <div class="mainWrapper marginedIn">
 
