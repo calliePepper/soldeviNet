@@ -9,6 +9,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="script/jquery.min.js"></script>
         <script type="text/javascript" src="script/shared.js"></script>
+        <script type="text/javascript" src="script/masonry.js"></script>
     </head>
     <body id="homePage">
 	    <header>
@@ -46,7 +47,7 @@
 	    	</div>
 	    </header>
 	    <div class="mainWrapper marginedIn">
-	    	<div id="sectionHolder" class="innerWrapper clearFloat">
+	    	<div id="sectionHolder" class="innerWrapper clearFloat grid">
 		    	<!--<section class="generalType frontPageSection">
 		    		<div class="sectionInner">
 			    		<div class="blogType"></div>
@@ -113,6 +114,9 @@
 						$innerQuery->bind_result($imageURL,$imageAlt);
 		 				while($innerQuery->fetch()){
 						   $date = date('F jS, Y', strtotime($date));
+						   $content = addslashes(str_replace(array('\r', '\n'), '', $content));
+						   $title = addslashes($title);
+						   $short = addslashes($short);
 						   echo "blogs[$id] = [];
 						   blogs[$id]['title'] = '$title';
 						   blogs[$id]['blogurl'] = '$url';
@@ -132,6 +136,8 @@
 			var filters = [];filters[1] = 1;filters[2] = 1;filters[3] = 1;filters[4] = 1;filters[5] = 1;filters[6] = 1; 
 			var filterTypes = [];filterTypes[1] = 'generalType';filterTypes[2] = 'htmlType';filterTypes[3] = 'phpType';filterTypes[4] = 'jsType';filterTypes[5] = 'designType';filterTypes[6] = 'projectType';
 			var filterTotals = [];filterTotals[1] = 0;filterTotals[2] = 0;filterTotals[3] = 0;filterTotals[4] = 0;filterTotals[5] = 0;filterTotals[6] = 0;
+			var masonrySetup = 0;
+			var $grid;
 
 			function draw() {
 				checkFilters();
@@ -140,13 +146,23 @@
 				$.each(blogs, function(index,array) {
 					if (filters[array['blogtype']] == 1 && totalBlogs < 6) {
 						totalBlogs++;
-						var fillerData = "<section class='"+filterTypes[array['blogtype']]+" frontPageSection' style='display:none;'><div class='sectionInner'><div class='blogType'></div><div class='blogData'><div class='blogImage' style='background-image:src('img/"+array['image']+"'></div><div class='blogDate'>"+array['blogdate']+"</div><h2>"+array['title']+"</h2><p>"+array['short']+"</p><a href='article/"+array['blogurl']+"'><button class='readMore'>Read this post</button></a></div></div></section>";
+						var fillerData = "<section class='"+filterTypes[array['blogtype']]+" frontPageSection grid-item' style='display:none;'><div class='sectionInner'><div class='blogType'></div><div class='blogData'><div class='blogImage' style='background-image:src('img/"+array['image']+"'></div><div class='blogDate'>"+array['blogdate']+"</div><h2>"+array['title']+"</h2><p>"+array['short']+"</p><a href='article/"+array['blogurl']+"'><button class='readMore'>Read this post</button></a></div></div></section>";
 						$('#sectionHolder').append(fillerData);
 					}
 					filterTotals[array['blogtype']]++;
 				});
 				$('.frontPageSection').fadeIn();
 				checkRemovals();
+				if (masonrySetup == 0) {
+					$grid = $('.grid').masonry({
+					  // options
+					  columnWidth: '.frontPageSection',
+					  itemSelector: '.grid-item'
+					});
+					masonrySetup = 1;
+				} else {
+					$grid.masonry('layout');
+				}
 			}
 
 			function checkRemovals() {

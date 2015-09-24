@@ -39,7 +39,10 @@
 	    </header>
 	    <div class="mainWrapper marginedIn">
 	    	<div class="innerWrapper clearFloat">
-
+	    		<div id="archiveController">
+	    			<input type="checkbox" id="briefControl" />
+	    			Show brief<br>description
+	    		</div>
 		    	<h1>Archive</h1>
 
 				<?php
@@ -87,6 +90,13 @@
 		-->
 	    <script>
 	    $('.brief').hide();
+
+	    $('#briefControl').on('click touch', function() {
+	    	$('.brief').each(function() {
+	    		$(this).slideToggle();
+	    	})
+	    });
+
 	    $('.search').on('click touch', function() {
 	    	if ($('.search').css('width') == '40px') {
 	    		$('.search').addClass('showSearch');

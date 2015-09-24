@@ -63,8 +63,11 @@
 				<div class="generalType">
 			    	<div class="blogType articleType"></div>
 			    </div>
-				<h1 class="articleTitle"><?=$title?></h1>
-				<p><?=$content?></p>
+				<div class="articleContent">
+					<h1 class="articleTitle"><?=$title?></h1>
+					
+						<?=$content?>
+				</div>
 		    	<div id="disqus_thread"></div>
 				<script type="text/javascript">
 				    /* * * CONFIGURATION VARIABLES * * */
