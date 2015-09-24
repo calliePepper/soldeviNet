@@ -22,11 +22,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">   
         <title>Soldevi - Teaching Web Development in Higher Education</title>
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="script/jquery.min.js"></script>
-        <script type="text/javascript" src="script/shared.js"></script>
+        <script type="text/javascript" src="/script/jquery.min.js"></script>
+        <script type="text/javascript" src="/script/shared.js"></script>
     </head>
     <body id="homePage">
 	    <header>
@@ -53,7 +53,7 @@
 		    	</div>
 	    	</div>
 	    </header>
-	    <div class="blogImageLarge" style="background-image:src('img/<?=$imageURL?>')"></div>
+	    <div class="blogImageLarge" style="background-image:src('/img/<?=$imageURL?>')"></div>
 	    <div class="topicBar marginedIn"></div>
 	    <div class="mainWrapper marginedIn">
 

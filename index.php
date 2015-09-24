@@ -146,7 +146,7 @@
 				$.each(blogs, function(index,array) {
 					if (filters[array['blogtype']] == 1 && totalBlogs < 6) {
 						totalBlogs++;
-						var fillerData = "<section class='"+filterTypes[array['blogtype']]+" frontPageSection grid-item' style='display:none;'><div class='sectionInner'><div class='blogType'></div><div class='blogData'><div class='blogImage' style='background-image:src('img/"+array['image']+"'></div><div class='blogDate'>"+array['blogdate']+"</div><h2>"+array['title']+"</h2><p>"+array['short']+"</p><a href='article/"+array['blogurl']+"'><button class='readMore'>Read this post</button></a></div></div></section>";
+						var fillerData = "<section class='"+filterTypes[array['blogtype']]+" frontPageSection grid-item' style='display:none;'><div class='sectionInner'><div class='blogType'></div><div class='blogData'><div class='blogImage' style='background-image:src(\"img/"+array['image']+"\");'></div><div class='blogDate'>"+array['blogdate']+"</div><h2>"+array['title']+"</h2><p>"+array['short']+"</p><a href='article/"+array['blogurl']+"'><button class='readMore'>Read this post</button></a></div></div></section>";
 						$('#sectionHolder').append(fillerData);
 					}
 					filterTotals[array['blogtype']]++;
