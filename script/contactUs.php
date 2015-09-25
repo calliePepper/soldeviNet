@@ -19,12 +19,17 @@
             <p>'.$message.'</p>
         </body>
     </html>';
-    if (mailTime('faedaunt@gmail.com', 'mailer@novoss.com', 'New-Growth', 'Contacted from website!', $body)) {
+    if (mailTime('faedaunt@gmail.com', 'faedaunt+autoMailer@gmail.com', 'New-Growth', 'Contacted from website!', $body)) {
         $status = 'Success';
         $message = 'Email sent';
     } else {
-        $message = 'Emailing failed';
-        $status = 'Failed';
+        if (mail('faedaunt@gmail.com', 'Contacted from website!', $body, "MIME-Version: 1.0\r\nContent-type:text/html;charset=UTF-8\r\nFrom: faedaunt+autoMailer@gmail.com\r\n")) {
+            $message = "Main email failed, backup worked";
+            $status = "Email sent";
+        } else {
+            $message = 'Emailing failed';
+            $status = 'Failed';
+        }
     }            
     $data = array(  
         'status' => $status,  

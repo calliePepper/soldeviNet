@@ -83,7 +83,7 @@
 		    			<div id="contactForm">
 			    			<div class="form-group">
 			    				<label class="form-label" for="username">Your name</label>
-			    				<input type="text" class="formControl" name="username" id="username" />
+			    				<input type="text" class="formControl" name="name" id="name" />
 			    			</div>
 			    			<div class="form-group">
 			    				<label class="form-label" for="username">Email</label>
@@ -164,8 +164,10 @@
                         },                    
                         success: function(html)
                         {
-                           $('#loadingTriangle').fadeOut();
-                           $('#thankYou').fadeIn();
+                           $('#loadingTriangle').fadeOut(function() {
+                           		$('#thankYou').fadeIn();
+                           	});
+                           	console.log(html);	                           
                         },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 emailAjaxCheck = 0;

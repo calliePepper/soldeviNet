@@ -128,7 +128,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .archiveSection{width:100%;background:#fff;border:1px solid #e9e9e9;padding:10px;margin:10px 0;}
 .archiveSection h2{margin-top:0px;}
 .archiveImage{width:80px;height:80px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;float:left;margin-right:30px;}
-.brief{margin-top:20px;}
+.brief{margin-top:20px;font-weight:normal;}
 .archiveLink{text-decoration:none;}
 #archiveController{float:right;text-align:right;position:relative;}
 #briefControl{width:20px;height:20px;position:absolute;left:-40px;top:10px;}
@@ -139,9 +139,9 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 
 
 .tinyWrapper{width:600px;margin:0 auto;}
-.contactCard{padding:20px;background:#fff;border: 1px solid #e9e9e9;}
+.contactCard{padding:20px;background:#fff;border: 1px solid #e9e9e9;transition:1s height;}
 .socialThirds{width:32%;padding:10px;display:inline-block;}
-.socialButton{width:100%;padding:4px 12px;}
+.socialButton{width:100%;padding:4px 12px;cursor:pointer;}
 .tumblr{background:#32506d;border:1px solid #32506d;}
 .github{background:#000;border:1px solid #000;}
 .twitter{background:#00aced;border:1px solid #00aced;}
@@ -151,8 +151,9 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .form-group.focus .form-label, .form-group.filled .form-label{top:12px;font-size:10px;}
 textarea{height:200px;}
 .sendForm{border-radius:2px;background:transparent;border:2px solid #9C27B0;padding:14px;cursor:pointer;color:#9C27B0;}
-#loadingTriangle{display:none;}
+#loadingTriangle{display:none;height:380px;}
 #thankYou{display:none;}
+.redLine{background:rgba(255,0,0,0.1);}
 
 /*
 	Triangle loading anim

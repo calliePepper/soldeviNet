@@ -2824,8 +2824,8 @@ function mailTime($to, $from, $from_name, $subject, $body) {
   $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
   $mail->Host = 'smtp.gmail.com';
   $mail->Port = 465; 
-  $mail->Username = 'mailer@novoss.com';  
-  $mail->Password = 'zuw2U5ra';
+  $mail->Username = 'faedaunt@gmail.com';  
+  $mail->Password = 'soldeviRevilo01!';
   $mail->IsHTML(true); 
   $mail->SetFrom($from, $from_name);
   $mail->AddReplyTo($from,"Us"); 
