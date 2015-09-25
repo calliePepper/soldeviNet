@@ -171,7 +171,9 @@
                         },
                             error: function (xhr, ajaxOptions, thrownError) {
                                 emailAjaxCheck = 0;
-                                console.log('Error! ' + ajaxOptions + ' - ' + thrownError);
+                                console.log('Error!');
+                                console.log(ajaxOptions);
+                                console.log(thrownError);
                                 console.log(xhr);
                             }                       
                     });
