@@ -1,6 +1,11 @@
 <?php
 	include "../databaseControllers/blogDb.php";
-	$currentName = $_GET['name'];
+	if (isset($_GET['name'])) {
+		$currentName = $_GET['name'];
+	} else {
+		location("header:http://www.soldevi.net");
+		exit();
+	}
 
 	$query = $con->prepare("SELECT * FROM blogs WHERE blogurl = '$currentName'");
 	//$query->bind_param('s', $_GET['username']);
@@ -28,7 +33,7 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">   
-        <title>Soldevi - Teaching Web Development in Higher Education</title>
+        <title>Soldevi - <?=$title?></title>
         <link href="/css/style.css" rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
@@ -40,7 +45,7 @@
 	    	<div class="generalHeader clearFloat">
 	    		<div class="marginedIn">
 		    		<!--<img src="" class="logo" />-->
-			    	<a class="logoLink" href="index.php">
+			    	<a class="logoLink" href="/index.php">
 			    		<span class="logo">
 			    			Soldevi
 			    		</span>

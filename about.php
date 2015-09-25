@@ -3,7 +3,7 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">   
-        <title>Soldevi - Teaching Web Development in Higher Education</title>
+        <title>Soldevi - About me</title>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
@@ -80,19 +80,34 @@
 		    			</div>
 		    		</div>
 		    		<div class="formset">
-		    			<div class="form-group">
-		    				<label class="form-label" for="username">Your name</label>
-		    				<input type="text" class="formControl" name="username" id="username" />
-		    			</div>
-		    			<div class="form-group">
-		    				<label class="form-label" for="username">Email</label>
-		    				<input type="text" class="formControl" name="email" id="email" />
-		    			</div>
-		    			<div class="form-group">
-		    				<label class="form-label" for="username">Message</label>
-		    				<textarea class="formControl" name="email" id="email"></textarea>
-		    			</div>
-		    			<button class="sendForm">Contact away!</button>
+		    			<div id="contactForm">
+			    			<div class="form-group">
+			    				<label class="form-label" for="username">Your name</label>
+			    				<input type="text" class="formControl" name="username" id="username" />
+			    			</div>
+			    			<div class="form-group">
+			    				<label class="form-label" for="username">Email</label>
+			    				<input type="text" class="formControl" name="email" id="email" />
+			    			</div>
+			    			<div class="form-group">
+			    				<label class="form-label" for="username">Message</label>
+			    				<textarea class="formControl" name="message" id="message"></textarea>
+			    			</div>
+			    			<button id="submitBtn" class="sendForm">Contact away!</button>
+			    		</div>
+			    		<div id="loadingTriangle">
+							<div id='container'>
+							  <div class='triangle'></div>
+							  <div class='triangle'></div>
+							  <div class='triangle'></div>
+							  <div class='triangle'></div>
+							  <div class='triangle'></div>
+							  <div class='triangle'></div>
+							</div>
+			    		</div>
+			    		<div id="thankYou">
+			    			<h3>Thank you for your message</h3>
+			    		</div>
 		    		</div>
 		    	</div>
 		    </section>
@@ -108,11 +123,60 @@
 			</div>
 		-->
 	    <script>
-	    $('.search').on('click touch', function() {
-	    	if ($('.search').css('width') == '40px') {
-	    		$('.search').addClass('showSearch');
-	    	}
-	    })
+		    $('.search').on('click touch', function() {
+		    	if ($('.search').css('width') == '40px') {
+		    		$('.search').addClass('showSearch');
+		    	}
+		    });
+
+		    $('#submitBtn').on('click touch', function() {
+                $('.formControl').removeClass('redLine');
+                $('#errorMessage').hide();
+                var error = 0;
+                if ($('#name').val() == "" || $('#name').val() == undefined) {
+                    $('#name').addClass('redLine');
+                    error = 1;
+                }
+                if ($('#email').val() == "" || $('#email').val() == undefined) {
+                    $('#email').addClass('redLine');
+                    error = 1;
+                } 
+                if ($('#message').val() == "" || $('#message').val() == undefined) {
+                    $('#message').addClass('redLine');
+                    error = 1;
+                }
+                if (error == 0){
+                    $('#submitBtn').off();
+                    $('#contactForm').fadeOut(function() {
+                    	$('#loadingTriangle').fadeIn();
+                    });
+                    var name = $('#name').val();
+                    var email = $('#email').val();
+                    var message = $('#message').val();
+                    $.ajax({
+                        type: "POST",
+                        url: "script/contactUs.php",
+                        dataType: "JSON",
+                        data: { 
+                          'name': name, 
+                          'email': email, 
+                          'message': message 
+                        },                    
+                        success: function(html)
+                        {
+                           $('#loadingTriangle').fadeOut();
+                           $('#thankYou').fadeIn();
+                        },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                emailAjaxCheck = 0;
+                                console.log('Error! ' + ajaxOptions + ' - ' + thrownError);
+                                console.log(xhr);
+                            }                       
+                    });
+                } else {
+                    $('#errorMessage').show();
+                }   
+            });
 	    </script>
     </body>	
 </html>

@@ -86,17 +86,6 @@
 		    	</section>-->
 		    </div>
 	    </div>
-	    <!-- Set up for loading anim
-	    	<div id='container'>
-			  <div class='triangle'></div>
-			  <div class='triangle'></div>
-			    $date = date('F jS, Y', strtotime($date));
-			  <div class='triangle'></div>
-			  <div class='triangle'></div>
-			  <div class='triangle'></div>
-			  <div class='triangle'></div>
-			</div> -->
-
 		<script>
 	    	var blogs = [];
 	    	<?php

@@ -3,7 +3,7 @@
     <head> 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1">   
-        <title>Soldevi - Teaching Web Development in Higher Education</title>
+        <title>Soldevi - My students</title>
         <link href="css/style.css" rel="stylesheet" type="text/css" />
         <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,600' rel='stylesheet' type='text/css'>
@@ -41,15 +41,16 @@
 	    	<div class="innerWrapper clearFloat">
 
 		    	<h1>Students</h1>
-		    	<p>This page is awaiting student work</p>
+		    	<p>This page contains my students both past and current who have a portfolio site.</p>
 		    	<!--<section class="archiveSection">
 		    		<h2>Past Students</h2>
 
-		    	</section>
+		    	</section>-->
 		    	<section class="archiveSection">
 		    		<h2>Current Students</h2>
-		    		
-		    	</section>-->
+		    		<div class="student"><strong>Stuart Mitchelhill</strong> - <a href="http://stumitchdesign.com">stumitchdesign.com</a></div>
+		    		<div class="student"><strong>Maryo Sumenge</strong> - <a href="http://www.maryo.info">www.maryo.info</a></div>
+		    	</section>
 		    </div>
 	    </div>
 	    <!-- Set up for loading anim

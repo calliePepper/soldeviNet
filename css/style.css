@@ -21,6 +21,8 @@ body{background:#f3f3f3;font-family:"Open Sans", arial, san-serif;}
 h1,h2,h3,h4,h5,h6{font-family:"Bree Serif",serif;text-decoration: none;}
 .marginedIn{width:100%;max-width:1680px;margin:0 auto;position:relative;}
 a{color:#9C27B0;}
+li{color:#333;}
+
 /*
      Header
 */
@@ -81,7 +83,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .blogImage{width:100%;height:200px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 .blogImageLarge{width:100%;height:200px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 .blogDate{color:#000;font-style: italic;}
-.articleDate{position:absolute;right:20px;top:0px;}
+.articleDate{position:absolute;right:20px;top:37px;}
 .blogData{padding:14px;}
 .articleTitle{margin-top:10px;}
 .blogData h2{padding-top:10px;}
@@ -117,13 +119,14 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .projectType .readMore{color:#CDDC39;border-color:#CDDC39;}
 .projectType .readMore:hover{background:#CDDC39;}
 .miniType:before{content:"" !important ;}
-.miniType{padding:0 10px;}
+.miniType{padding:0;margin-right:10px;}
 
 /*
 	Archive page
 */
 
-.archiveSection{width:100%;}
+.archiveSection{width:100%;background:#fff;border:1px solid #e9e9e9;padding:10px;margin:10px 0;}
+.archiveSection h2{margin-top:0px;}
 .archiveImage{width:80px;height:80px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;float:left;margin-right:30px;}
 .brief{margin-top:20px;}
 .archiveLink{text-decoration:none;}
@@ -148,6 +151,8 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .form-group.focus .form-label, .form-group.filled .form-label{top:12px;font-size:10px;}
 textarea{height:200px;}
 .sendForm{border-radius:2px;background:transparent;border:2px solid #9C27B0;padding:14px;cursor:pointer;color:#9C27B0;}
+#loadingTriangle{display:none;}
+#thankYou{display:none;}
 
 /*
 	Triangle loading anim
