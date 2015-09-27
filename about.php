@@ -42,12 +42,12 @@
 	    		<img src="" class="shotOfMe" />
 	    		<div class="aboutContent">
 					<h1>About</h1>
-			    	<p><strong>I am a web developer and design, a full stack unicorn if you will, based in Brisbane, Australia. Or at least that's all I thought I would be, until I found myself happily dropped into a teacher career current with SAE Brisbane. Now I use my drive and passion for design, development and user experience to create passion in my students to follow the same path.</strong></p>
+			    	<p><strong>I am a web developer and design, a full stack unicorn if you will, based in Brisbane, Australia. Or at least that's all I thought I would be, until I found myself happily dropped into a teacher career currently with SAE Brisbane. Now I use my drive and passion for design, development and user experience to create passion in my students to follow the same path.</strong></p>
 			    	<p>It wasn't before long after starting this new job I realised just how much there was to teaching, with hundreds of different techniques, ways to deal with problem students and ways to deliver material. And so in order to document my findings, trials and tribulations I have created this small blog. My hope is that others in the field may find some insight here, but realistically this will be somewhere I can look back at my path.
 			    	<p>This page will also be used to track students in two ways:
 			    		<ul>
 			    			<li><strong>Past students</strong> will be listed so I can keep track of their progress, but a little bit of link SEO won't hurt them either.</li>
-			    			<li><strong>Current students</strong> will be give the option to host their work on this website. While this will not be a permanent link, it will be set up in a way that simulates a real hosting set up.</li>
+			    			<li><strong>Current students</strong> will be give the option to host their work on this website. While this will not be a permanent link, it will be set up in a way that simulates a real hosting enviroment.</li>
 			    		</ul>
 			    	</p>		    	
 			    	<p>In my spare time I also learn and teach fighting in the SCA (Society for Creative Anachonisms), the results of this could also become a point of interest in this page, but we will see how that goes.</p>
@@ -181,6 +181,14 @@
                     $('#errorMessage').show();
                 }   
             });
+
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-40923417-4', 'auto');
+			  ga('send', 'pageview');
 	    </script>
     </body>	
 </html>

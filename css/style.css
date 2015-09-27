@@ -67,6 +67,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .mainWrapper{padding:4px;position:relative;z-index:1;}
 .innerWrapper{width:100%;}
 .articleContent{max-width:900px;margin:0 auto;line-height:2;letter-spacing: 0.5px;}
+.articleContent img{max-width:100%;}
 .articleContent h1, .articleContent p{padding-bottom:18px;}
 .articleContent p{line-height:2;letter-spacing: 0.5px;}
 .articleContent li{margin-left:30px;padding-left:10px;line-height:2;padding-bottom:18px;letter-spacing: 0.5px;}

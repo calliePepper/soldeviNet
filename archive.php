@@ -97,19 +97,27 @@
 			</div>
 		-->
 	    <script>
-	    $('.brief').hide();
+		    $('.brief').hide();
 
-	    $('#briefControl').on('click touch', function() {
-	    	$('.brief').each(function() {
-	    		$(this).slideToggle();
-	    	})
-	    });
+		    $('#briefControl').on('click touch', function() {
+		    	$('.brief').each(function() {
+		    		$(this).slideToggle();
+		    	})
+		    });
 
-	    $('.search').on('click touch', function() {
-	    	if ($('.search').css('width') == '40px') {
-	    		$('.search').addClass('showSearch');
-	    	}
-	    })
+		    $('.search').on('click touch', function() {
+		    	if ($('.search').css('width') == '40px') {
+		    		$('.search').addClass('showSearch');
+		    	}
+		    })
+
+	  		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-40923417-4', 'auto');
+			  ga('send', 'pageview');
 	    </script>
     </body>	
 </html>
