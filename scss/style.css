@@ -298,7 +298,7 @@ nav li {
   border-bottom: 4px solid #4CAF50; }
 
 .projectTopic {
-  border-bottom: 4px solid #FFCC00; }
+  border-bottom: 4px solid #FFCC000; }
 
 .projectTopic :after {
   content: "s"; }
@@ -492,19 +492,19 @@ nav li {
   background: #4CAF50; }
 
 .projectType .blogType {
-  border-bottom: 2px solid #FFCC00;
-  color: #FFCC00;
+  border-bottom: 2px solid #FFCC000;
+  color: #FFCC000;
   position: relative; }
 
 .projectType .blogType:before {
   content: "Project work"; }
 
 .projectType .readMore {
-  color: #FFCC00;
-  border-color: #FFCC00; }
+  color: #FFCC000;
+  border-color: #FFCC000; }
 
 .projectType .readMore:hover {
-  background: #FFCC00; }
+  background: #FFCC000; }
 
 .miniType:before {
   content: "" !important; }
@@ -750,13 +750,13 @@ textarea {
     opcatiy: 1;
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
-    border-bottom: 4px solid #FFCC00;
+    border-bottom: 4px solid #FFCC000;
     margin-top: -4px; }
   to {
     opacity: 0;
     border-left: 200px solid transparent;
     border-right: 200px solid transparent;
-    border-bottom: 300px solid #FFCC00;
+    border-bottom: 300px solid #FFCC000;
     margin-top: -300px; } }
 @media (min-width: 25em) {
   nav li {
