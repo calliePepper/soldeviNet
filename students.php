@@ -19,7 +19,6 @@
 		    		<h2>Current Students</h2>
 		    		<div class="student"><strong>Stuart Mitchelhill</strong> - <a href="http://stumitchdesign.com">stumitchdesign.com</a></div>
 		    		<div class="student"><strong>Maryo Sumenge</strong> - <a href="http://www.maryo.info">www.maryo.info</a></div>
-		    		<div class="student"><strong>Jahl Herapath</strong> - <a href="http://www.ohhcdd.com">www.ohhcdd.com</a></div>
 		    	</section>
 		    </div>
 	    </div>
