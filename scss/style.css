@@ -255,10 +255,9 @@ nav li {
 
 .tagline {
   position: absolute;
-  top: -30px;
+  top: 42px;
   left: 20px;
-  color: #aaa;
-  display: none; }
+  color: #aaa; }
 
 .hero {
   background: url(../img/cloudHero.png);
@@ -963,9 +962,6 @@ textarea {
     width: 50%;
     float: left;
     padding: 10px; }
-
-  .tagline {
-    display: block; }
 
   header {
     padding-top: 72px; }

@@ -35,4 +35,6 @@
 		    		</nav>
 		    	</div>
 	    	</div>
-	    	<div class="tagline">The trials and tribulations of teaching Web Design and Development</div>
+	    	<div class="marginedIn">
+	    		<div class="tagline">The trials and tribulations of teaching Web Design and Development</div>
+	    	</div>

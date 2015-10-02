@@ -34,7 +34,7 @@ li{color:#333;}
      Header
 */
 
-header{background:#111;padding-top:72px;}
+header{background:#111;padding-top:82px;}
 .generalHeader{position:fixed;background:#111;top:0px;z-index:2;width:100%;}
 .clearFloat,.clearFloatMobile{zoom:1;}
 .clearFloat:after, .clearFloatMobile {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
@@ -55,7 +55,7 @@ nav li {color:#fff;display:inline-block;text-align:center;width:23.6%;height:42p
 .showSearch{width:200px;}
 .searchBox{background:transparent;border:0px;height:100%;width:160px;position:relative;top:0px;color:#fff;padding:10px;}
 .search:after{content:"";position:absolute;height:20px;width:20px;top:10px;right:10px;background:url(../img/search.png);cursor:pointer;}
-.tagline{position:absolute;top:42px;left:20px;color:#aaa;}
+.tagline{position:absolute;top:-30px;left:20px;color:#aaa;display:none;}
 .hero{background:url(../img/cloudHero.png);background-size:cover;width:100%;height:90px;}
 .topicBar{text-align:center;padding:0 20px;min-height:23px;}
 .topicType{display:inline-block;color:#FFF;margin:0 10px;text-transform: uppercase;padding:10px 0;letter-spacing:1px;font-size:0.8em;border-bottom:4px solid #111;transition:1s;cursor:pointer;}
@@ -239,7 +239,8 @@ textarea{height:200px;}
 	.clearFloatMobile{display:none;clear:none;}
 	nav{display:inline-block;float:right;padding-right:20px;}
 	.frontPageSection{width:50%;float:left;padding:10px;}
-	header{padding-top:42px;}
+  .tagline{display:block;}
+	header{padding-top:72px;}
 	.hero{height:160px;}
   .blogImageLarge{width:100%;height:400px;background:url(../img/exampleHeader.png);background-position:center;background-size:cover;}
 }
